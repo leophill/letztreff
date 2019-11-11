@@ -1,2 +1,3 @@
 # letztreff
-Letz Event Management App
+Letz Event Management Android App
+MICS2-4
