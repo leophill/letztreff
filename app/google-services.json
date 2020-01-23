@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "515338836765",
+    "firebase_url": "https://letztreff.firebaseio.com",
+    "project_id": "letztreff",
+    "storage_bucket": "letztreff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515338836765:android:c65dd613ffc1faeda19ff4",
+        "android_client_info": {
+          "package_name": "com.lu.uni.letztreff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515338836765-51la2sd3fu5bcn01e64dldem748c2fca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi7D5RCtHDTV_-KIPpIlhk_CIt6dlhwHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515338836765-51la2sd3fu5bcn01e64dldem748c2fca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
