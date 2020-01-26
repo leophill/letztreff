@@ -5,4 +5,9 @@
     <color name="colorPrimaryLight">#EDE7F6</color>
     <color name="colorAccent">#7C4DFF</color>
     <color name="colorSecondary">#FFC107</color>
+    <color name="textColorPrimary">#442C2E</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
+    <color name="textInputOutlineColor">#FBB8AC</color>
 </resources>
