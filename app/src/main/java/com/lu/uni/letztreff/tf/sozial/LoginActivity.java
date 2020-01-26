@@ -1,4 +1,4 @@
-package com.lu.uni.letztreff.ui.login;
+package com.lu.uni.letztreff.tf.sozial;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,17 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.lu.uni.letztreff.R;
+
 import java.util.Arrays;
 import java.util.List;
-import com.lu.uni.letztreff.R;
-import com.lu.uni.letztreff.tf.sozial.MainActivity;
-import com.lu.uni.letztreff.ui.login.LoginViewModel;
-import com.lu.uni.letztreff.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1234;
@@ -37,16 +37,21 @@ public class LoginActivity extends AppCompatActivity {
                 if (auth.getCurrentUser() != null) {
                     Toast.makeText(getApplicationContext(), "User already signed in, must sign out first",
                             Toast.LENGTH_SHORT).show();
-                    // already signed in
+                    // already signed in. Cleanup zombie session
+                    auth.signOut();
                 } else {
                     // Choose authentication providers
                     List<AuthUI.IdpConfig> providers = Arrays.asList(
-                            new AuthUI.IdpConfig.EmailBuilder().build());
+                            new AuthUI.IdpConfig.EmailBuilder().build(),
+                            new AuthUI.IdpConfig.GoogleBuilder().build(),
+                            new AuthUI.IdpConfig.FacebookBuilder().build());
+
                     // Create and launch sign-in intent
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
                                     .setAvailableProviders(providers)
+                                    .setLogo(R.drawable.ic_lt_logo)
                                     .build(),
                             RC_SIGN_IN);
                 }
@@ -74,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void launchEventActivity(FirebaseUser user) {
         if (user != null) {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, EventActivity.class));
             finish();
         }
     }

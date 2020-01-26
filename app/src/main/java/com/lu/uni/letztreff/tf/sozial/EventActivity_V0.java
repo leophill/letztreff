@@ -1,13 +1,14 @@
 package com.lu.uni.letztreff.tf.sozial;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.lu.uni.letztreff.R;
 
-public class EventActivity extends AppCompatActivity implements NavigationHost {
+public class EventActivity_V0 extends AppCompatActivity implements NavigationHost {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,7 @@ public class EventActivity extends AppCompatActivity implements NavigationHost {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new EventGridFragment())
+                    .add(R.id.container, new LoginFragment())
                     .commit();
         }
     }

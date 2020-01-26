@@ -16,6 +16,7 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fb2456151084647889</string>
 
     <string name="shr_app_name">Letz Treff</string>
+    <string name="shr_app_welcome">Welcome to Letz Events!</string>
     <string name="shr_hint_username">Username</string>
     <string name="shr_hint_password">Password</string>
     <string name="shr_button_next">Next</string>
