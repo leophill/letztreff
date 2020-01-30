@@ -36,7 +36,8 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1234;
     public static final String TAG = "TAG";
-    public Location mlocation = new Location("uni.lu");
+    //public Location mlocation = new Location("uni.lu");
+    public GeoPoint mlocation = new GeoPoint(0, 0);
 
     public static void startActivity(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
     // The entry point to the Fused Location Provider.
-    private FusedLocationProviderClient mFusedLocationProviderClient;
+    private FusedLocationProviderClient mFusedLocationClient;
 
     // Set default location to (Uni Belval, Luxembourg)
     //private final  mDefaultLocation = [49.656639, 19.636917];
@@ -87,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         // Construct a FusedLocationProviderClient.
-        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
     }
 
     @Override
@@ -103,19 +104,16 @@ public class LoginActivity extends AppCompatActivity {
                         .show();
 
                 // Get device last location
-                Task locationResult = mFusedLocationProviderClient.getLastLocation();
+                Task locationResult = mFusedLocationClient.getLastLocation();
                 locationResult.addOnSuccessListener(this, new OnSuccessListener<Location>() {
                             @Override
                             public void onSuccess(Location location) {
                                 // Got last known location. In some rare situations this can be null.
                                 if (location != null) {
                                     Log.d(TAG, "Location successfully retrieved!");
-                                    mlocation = location;
+                                    mlocation = new GeoPoint(location.getLatitude() * 1E6, location.getLongitude() * 1E6);
                                 } else {
                                     Log.d(TAG, "Failed to retrieve current Location. Switching to default!");
-                                    //Set default coordinates to University of Luxembourg in Belval
-                                    mlocation.setLatitude(49.504470);
-                                    mlocation.setLongitude(5.948397);
                                 }
                             }
                         });
@@ -128,7 +126,7 @@ public class LoginActivity extends AppCompatActivity {
                 userdata.put("Username", user.getDisplayName());
                 userdata.put("Email", user.getEmail());
                 userdata.put("Phone", user.getPhoneNumber());
-                userdata.put("Location", new GeoPoint(mlocation.getLatitude(), mlocation.getLongitude()));
+                userdata.put("Location", mlocation);
 
                 // Add a new document with a generated ID
 
