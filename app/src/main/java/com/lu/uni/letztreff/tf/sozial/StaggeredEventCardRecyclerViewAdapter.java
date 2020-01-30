@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lu.uni.letztreff.R;
+import com.lu.uni.letztreff.network.EventEntry;
 import com.lu.uni.letztreff.network.ImageRequester;
-import com.lu.uni.letztreff.network.ProductEntry;
 
 import java.util.List;
 
@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.RecyclerView;
  * Adapter used to show an asymmetric grid of products, with 2 items in the first column, and 1
  * item in the second column, and so on.
  */
-public class StaggeredProductCardRecyclerViewAdapter extends RecyclerView.Adapter<StaggeredProductCardViewHolder> {
+public class StaggeredEventCardRecyclerViewAdapter extends RecyclerView.Adapter<StaggeredEventCardViewHolder> {
 
-    private List<ProductEntry> productList;
+    private List<EventEntry> productList;
     private ImageRequester imageRequester;
 
-    public StaggeredProductCardRecyclerViewAdapter(List<ProductEntry> productList) {
+    public StaggeredEventCardRecyclerViewAdapter(List<EventEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
     }
@@ -34,22 +34,22 @@ public class StaggeredProductCardRecyclerViewAdapter extends RecyclerView.Adapte
 
     @NonNull
     @Override
-    public StaggeredProductCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layoutId = R.layout.shr_staggered_product_card_first;
+    public StaggeredEventCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        int layoutId = R.layout.shr_staggered_event_card_first;
         if (viewType == 1) {
-            layoutId = R.layout.shr_staggered_product_card_second;
+            layoutId = R.layout.shr_staggered_event_card_second;
         } else if (viewType == 2) {
-            layoutId = R.layout.shr_staggered_product_card_third;
+            layoutId = R.layout.shr_staggered_event_card_third;
         }
 
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);
-        return new StaggeredProductCardViewHolder(layoutView);
+        return new StaggeredEventCardViewHolder(layoutView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StaggeredProductCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull StaggeredEventCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
-            ProductEntry product = productList.get(position);
+            EventEntry product = productList.get(position);
             holder.productTitle.setText(product.title);
             holder.productPrice.setText(product.price);
             imageRequester.setImageFromUrl(holder.productImage, product.url);

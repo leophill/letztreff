@@ -9,13 +9,13 @@ import com.lu.uni.letztreff.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class StaggeredProductCardViewHolder extends RecyclerView.ViewHolder {
+public class StaggeredEventCardViewHolder extends RecyclerView.ViewHolder {
 
     public NetworkImageView productImage;
     public TextView productTitle;
     public TextView productPrice;
 
-    StaggeredProductCardViewHolder(@NonNull View itemView) {
+    StaggeredEventCardViewHolder(@NonNull View itemView) {
         super(itemView);
         productImage = itemView.findViewById(R.id.event_image);
         productTitle = itemView.findViewById(R.id.event_title);

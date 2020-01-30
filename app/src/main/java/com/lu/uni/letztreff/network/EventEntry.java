@@ -23,8 +23,8 @@ import java.util.List;
 /**
  * A product entry in the list of products.
  */
-public class ProductEntry {
-    private static final String TAG = ProductEntry.class.getSimpleName();
+public class EventEntry {
+    private static final String TAG = EventEntry.class.getSimpleName();
 
     public final String title;
     public final Uri dynamicUrl;
@@ -32,7 +32,7 @@ public class ProductEntry {
     public final String price;
     public final String description;
 
-    public ProductEntry(
+    public EventEntry(
             String title, String dynamicUrl, String url, String price, String description) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
@@ -42,9 +42,9 @@ public class ProductEntry {
     }
 
     /**
-     * Loads a raw JSON at R.raw.products and converts it into a list of ProductEntry objects
+     * Loads a raw JSON at R.raw.products and converts it into a list of EventEntry objects
      */
-    public static List<ProductEntry> initProductEntryList(Resources resources) {
+    public static List<EventEntry> initProductEntryList(Resources resources) {
         InputStream inputStream = resources.openRawResource(R.raw.events);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
@@ -65,7 +65,7 @@ public class ProductEntry {
         }
         String jsonProductsString = writer.toString();
         Gson gson = new Gson();
-        Type productListType = new TypeToken<ArrayList<ProductEntry>>() {
+        Type productListType = new TypeToken<ArrayList<EventEntry>>() {
         }.getType();
         return gson.fromJson(jsonProductsString, productListType);
     }

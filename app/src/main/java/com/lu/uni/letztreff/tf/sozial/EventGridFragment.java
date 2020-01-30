@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lu.uni.letztreff.R;
-import com.lu.uni.letztreff.network.ProductEntry;
+import com.lu.uni.letztreff.network.EventEntry;
 
 public class EventGridFragment extends Fragment {
 
@@ -31,7 +31,7 @@ public class EventGridFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
-        View view = inflater.inflate(R.layout.shr_product_grid_fragment, container, false);
+        View view = inflater.inflate(R.layout.shr_event_grid_fragment, container, false);
 
         // Set up the tool bar
         setUpToolbar(view);
@@ -47,8 +47,8 @@ public class EventGridFragment extends Fragment {
             }
         });
         recyclerView.setLayoutManager(gridLayoutManager);
-        StaggeredProductCardRecyclerViewAdapter adapter = new StaggeredProductCardRecyclerViewAdapter(
-                ProductEntry.initProductEntryList(getResources()));
+        StaggeredEventCardRecyclerViewAdapter adapter = new StaggeredEventCardRecyclerViewAdapter(
+                EventEntry.initProductEntryList(getResources()));
         recyclerView.setAdapter(adapter);
         int largePadding = getResources().getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_large);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_staggered_product_grid_spacing_small);
