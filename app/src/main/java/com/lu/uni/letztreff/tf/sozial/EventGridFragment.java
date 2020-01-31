@@ -18,9 +18,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.lu.uni.letztreff.R;
 import com.lu.uni.letztreff.network.EventEntry;
+import com.lu.uni.letztreff.tf.sozial.EventActivity;
 
 public class EventGridFragment extends Fragment {
 
@@ -62,9 +64,7 @@ public class EventGridFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, new FragmentName());
-                transaction.commit();
+                ((NavigationHost) getActivity()).navigateTo(new AddEventFragment(), true);
             }
         });
 
