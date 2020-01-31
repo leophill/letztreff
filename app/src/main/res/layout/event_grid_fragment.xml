@@ -40,8 +40,6 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main_content"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -72,17 +70,18 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            app:fabSize="normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
-            android:src="@drawable/ic_plus_24"
-            android:contentDescription="@string/ev_add_title"
             android:layout_margin="16dp"
             android:clickable="true"
+            android:contentDescription="@string/ev_add_title"
+            android:src="@drawable/ic_plus_24"
             app:backgroundTint="#FF1DA1F2"
+            app:fabSize="normal"
             app:layout_anchor="@id/mainview"
-            app:layout_anchorGravity="bottom|right|end"/>
+            app:layout_anchorGravity="bottom|right|end"
+            app:layout_behavior="com.lu.uni.letztreff.tf.sozial.ScrollAwareFABBehavior" />
 
 
 

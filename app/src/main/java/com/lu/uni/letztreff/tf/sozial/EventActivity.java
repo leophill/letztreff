@@ -14,6 +14,7 @@ public class EventActivity extends AppCompatActivity implements NavigationHost {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_activity);
 
+
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()

@@ -23,6 +23,7 @@ android {
 dependencies {
     api 'com.google.android.material:material:1.2.0-alpha04'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:design:28.1.1'
     // AndroidX Support Lib Modules
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
