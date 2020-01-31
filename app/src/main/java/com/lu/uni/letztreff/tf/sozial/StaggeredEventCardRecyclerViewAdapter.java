@@ -35,11 +35,11 @@ public class StaggeredEventCardRecyclerViewAdapter extends RecyclerView.Adapter<
     @NonNull
     @Override
     public StaggeredEventCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layoutId = R.layout.shr_staggered_event_card_first;
+        int layoutId = R.layout.staggered_event_card_first;
         if (viewType == 1) {
-            layoutId = R.layout.shr_staggered_event_card_second;
+            layoutId = R.layout.staggered_event_card_second;
         } else if (viewType == 2) {
-            layoutId = R.layout.shr_staggered_event_card_third;
+            layoutId = R.layout.staggered_event_card_third;
         }
 
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(layoutId, parent, false);

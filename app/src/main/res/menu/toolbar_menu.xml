@@ -4,11 +4,11 @@
     <item
         android:id="@+id/search"
         android:icon="@drawable/shr_search"
-        android:title="@string/shr_search_title"
+        android:title="@string/ev_search_title"
         app:showAsAction="always" />
     <item
-        android:id="@+id/filter"
-        android:icon="@drawable/shr_filter"
-        android:title="@string/shr_filter_title"
+        android:id="@+id/add"
+        android:icon="@drawable/ic_add"
+        android:title="@string/ev_add_title"
         app:showAsAction="always" />
 </menu>

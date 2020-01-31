@@ -20,14 +20,14 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".tf.sozial.LoginActivity">
+            android:name=".tf.sozial.EventActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".tf.sozial.EventActivity"></activity>
+        <activity android:name=".tf.sozial.LoginActivity"></activity>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_application_id"/>

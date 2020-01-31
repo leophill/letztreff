@@ -27,13 +27,12 @@
     <string name="shr_product_title">Title</string>
     <string name="shr_product_description">Secondary text</string>
 
-    <!-- Shrine backdrop menu labels -->
-    <string name="shr_featured_label">Featured</string>
-    <string name="shr_apartment_label">Apartment</string>
-    <string name="shr_accessories_label">Accessories</string>
-    <string name="shr_shoes_label">Shoes</string>
-    <string name="shr_tops_label">Tops</string>
-    <string name="shr_bottoms_label">Bottoms</string>
-    <string name="shr_dresses_label">Dresses</string>
-    <string name="shr_account_label">My Account</string>
+    <!-- Backdrop menu labels -->
+    <string name="top_events_label">Top Events</string>
+    <string name="my_events_label">My Events</string>
+    <string name="logout_label">Logout</string>
+    <string name="account_label">My Account</string>
+
+    <string name="ev_add_title">Add Event</string>
+    <string name="ev_search_title">Search Event</string>
 </resources>

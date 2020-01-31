@@ -13,7 +13,7 @@ public class EventActivity_V0 extends AppCompatActivity implements NavigationHos
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shr_event_activity);
+        setContentView(R.layout.event_activity);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()

@@ -31,7 +31,7 @@ public class EventGridFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
-        View view = inflater.inflate(R.layout.shr_event_grid_fragment, container, false);
+        View view = inflater.inflate(R.layout.event_grid_fragment, container, false);
 
         // Set up the tool bar
         setUpToolbar(view);
@@ -74,13 +74,13 @@ public class EventGridFragment extends Fragment {
                 getContext(),
                 view.findViewById(R.id.product_grid),
                 new AccelerateDecelerateInterpolator(),
-                getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Menu open icon
-                getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
+                getContext().getResources().getDrawable(R.drawable.event_menu), // Menu open icon
+                getContext().getResources().getDrawable(R.drawable.close_menu))); // Menu close icon
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
-        menuInflater.inflate(R.menu.shr_toolbar_menu, menu);
+        menuInflater.inflate(R.menu.toolbar_menu, menu);
         super.onCreateOptionsMenu(menu, menuInflater);
     }
 
